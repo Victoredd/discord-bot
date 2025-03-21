@@ -13,7 +13,7 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 GUILD = os.getenv("DISCORD_GUILD")
 aai.settings.api_key = os.getenv("ASSEMBLYAI_API_KEY")
 
-with open("dev_prompt.txt", "r") as f:
+with open("resources/dev_prompt.txt", "r") as f:
     developer_prompt = f.read()
 
 dsc_client = discord.Client(intents=discord.Intents.all())
