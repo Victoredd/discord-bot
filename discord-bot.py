@@ -48,8 +48,7 @@ async def on_message(message):
             transcribed_text = transcript.text
             activity = discord.Game(name="File (Creating Feedback)", type=discord.ActivityType.watching)
             await dsc_client.change_presence(status=discord.Status.online, activity=activity)
-            """
-            #if using openai api
+
             completion = oai_client.chat.completions.create(
                 model="gpt-4o",
                 messages=[
@@ -64,12 +63,7 @@ async def on_message(message):
                 ]
             )
             oai_response = completion.choices[0].message.content
-            print(oai_response)
-            """
-            #if using example text
-            with open("example-chatgpt-output.txt", "r") as o:
-                oai_response = o.read()
-                
+
             split_oai_response = oai_response.split("END_OF_SECTION")
             for part in split_oai_response:
                 await message.channel.send(part)
