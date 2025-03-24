@@ -40,6 +40,7 @@ async def on_message(message):
         await dsc_client.change_presence(status=discord.Status.online, activity=activity)
         transcriber = aai.Transcriber(config=aai.TranscriptionConfig(language_detection=True))
         transcript = transcriber.transcribe(file_path)
+        os.remove(file_path)
         if transcript.status == aai.TranscriptStatus.error:
             print(transcript.error)
             activity = discord.Game(name="Uh Oh", type=discord.ActivityType.playing)
@@ -65,8 +66,10 @@ async def on_message(message):
             oai_response = completion.choices[0].message.content
 
             split_oai_response = oai_response.split("END_OF_SECTION")
-            for part in split_oai_response:
-                await message.channel.send(part)
+            try:
+                for part in split_oai_response:
+                    await message.channel.send(part)
+            except: pass
             activity = discord.Game(name="Waiting to Transcribe", type=discord.ActivityType.playing)
             await dsc_client.change_presence(status=discord.Status.online, activity=activity)
 
