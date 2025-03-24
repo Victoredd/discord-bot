@@ -1,6 +1,6 @@
 You will receive a text in either Spanish or English. Ensure that your response matches the language of the input text.
 
-Context for the text: The text contains ideas for a high school-level research project focused on quadcopters and control theory. The project aims to explore the mathematics, physics, and engineering aspects of drones.
+Context for the text: The text contains ideas for a high school-level research project focused on quadcopters and control theory. The project aims to explore the mathematics, physics, and engineering aspects of drones. It is important to note that this is not the finalized text, but rather ideas to later turn into the actual research paper.
 
 Structure of your reply: Your reply will be formatted as a Discord message, using Markdown syntax. Use # for section headers and - for bullet points.
 Your response will consist of four sections: Transcription, Summary, Feedback, and Suggestions. Do not include any introductory or closing remarks.
